@@ -1,225 +1,219 @@
 <link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/firebase-element/firebase-document.html">
 
 <dom-module id="my-crappy-homepage-app">
   <template>
-    <style>
-    /*https://github.com/spratt/Computer-Modern */
-    /* http://checkmyworking.com/cm-web-fonts/ */
-    @font-face {
-    font-family: "Computer Modern Serif";
-    src: url('/fonts/computer-modern/cmunrm-webfont.eot');
-    src: url('/fonts/computer-modern/cmunrm-webfont.eot?#iefix') format('embedded-opentype'),
-    url('/fonts/computer-modern/cmunrm.otf') format('opentype'),
-    url('/fonts/computer-modern/cmunrm-webfont.woff') format('woff'),
-    url('/fonts/computer-modern/cmunrm-webfont.ttf') format('truetype'),
-    url('/fonts/computer-modern/cmunrm-webfont.svg#cmu_serifroman') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-@font-face {
-    font-family: "Computer Modern Serif";
-    src: url('/fonts/computer-modern/cmunsl-webfont.eot');
-    src: url('/fonts/computer-modern/cmunsl-webfont.eot?#iefix') format('embedded-opentype'),
-    url('/fonts/computer-modern/cmunsl.otf') format('opentype'),
-    url('/fonts/computer-modern/cmunsl-webfont.woff') format('woff'),
-    url('/fonts/computer-modern/cmunsl-webfont.ttf') format('truetype'),
-    url('/fonts/computer-modern/cmunsl-webfont.svg#cmu_serif_extraromanslanted') format('svg');
-    font-weight: normal;
-    font-style: italic;
-}
-@font-face {
-    font-family: "Computer Modern Serif";
-    src: url('/fonts/computer-modern/cmunbl-webfont.eot');
-    src: url('/fonts/computer-modern/cmunbl-webfont.eot?#iefix') format('embedded-opentype'),
-    url('/fonts/computer-modern/cmunbl.otf') format('opentype'),
-    url('/fonts/computer-modern/cmunbl-webfont.woff') format('woff'),
-    url('/fonts/computer-modern/cmunbl-webfont.ttf') format('truetype'),
-    url('/fonts/computer-modern/cmunbl-webfont.svg#cmu_serif_extraboldslanted') format('svg');
-    font-weight: bold;
-    font-style: italic;
-}
-@font-face {
-    font-family: "Computer Modern Serif";
-    src: url('/fonts/computer-modern/cmunbx-webfont.eot');
-    src: url('/fonts/computer-modern/cmunbx-webfont.eot?#iefix') format('embedded-opentype'),
-    url('/fonts/computer-modern/cmunbx.otf') format('opentype'),
-    url('/fonts/computer-modern/cmunbx-webfont.woff') format('woff'),
-    url('/fonts/computer-modern/cmunbx-webfont.ttf') format('truetype'),
-    url('/fonts/computer-modern/cmunbx-webfont.svg#cmu_serifbold') format('svg');
-    font-weight: bold;
-    font-style: normal;
-}
+      <firebase-document
+              data-as-object="true"
+              location="https://my-crappy-homepage-b8e48.firebaseio.com/cv"
+              data="{{cv}}"></firebase-document>
+        <style>
+        /*https://github.com/spratt/Computer-Modern */
+        /* http://checkmyworking.com/cm-web-fonts/ */
+        @font-face {
+            font-family: "Computer Modern Serif";
+            src: url('/fonts/computer-modern/cmunrm-webfont.eot');
+            src: url('/fonts/computer-modern/cmunrm-webfont.eot?#iefix') format('embedded-opentype'),
+            url('/fonts/computer-modern/cmunrm.otf') format('opentype'),
+            url('/fonts/computer-modern/cmunrm-webfont.woff') format('woff'),
+            url('/fonts/computer-modern/cmunrm-webfont.ttf') format('truetype'),
+            url('/fonts/computer-modern/cmunrm-webfont.svg#cmu_serifroman') format('svg');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: "Computer Modern Serif";
+            src: url('/fonts/computer-modern/cmunsl-webfont.eot');
+            src: url('/fonts/computer-modern/cmunsl-webfont.eot?#iefix') format('embedded-opentype'),
+            url('/fonts/computer-modern/cmunsl.otf') format('opentype'),
+            url('/fonts/computer-modern/cmunsl-webfont.woff') format('woff'),
+            url('/fonts/computer-modern/cmunsl-webfont.ttf') format('truetype'),
+            url('/fonts/computer-modern/cmunsl-webfont.svg#cmu_serif_extraromanslanted') format('svg');
+            font-weight: normal;
+            font-style: italic;
+        }
+        @font-face {
+            font-family: "Computer Modern Serif";
+            src: url('/fonts/computer-modern/cmunbl-webfont.eot');
+            src: url('/fonts/computer-modern/cmunbl-webfont.eot?#iefix') format('embedded-opentype'),
+            url('/fonts/computer-modern/cmunbl.otf') format('opentype'),
+            url('/fonts/computer-modern/cmunbl-webfont.woff') format('woff'),
+            url('/fonts/computer-modern/cmunbl-webfont.ttf') format('truetype'),
+            url('/fonts/computer-modern/cmunbl-webfont.svg#cmu_serif_extraboldslanted') format('svg');
+            font-weight: bold;
+            font-style: italic;
+        }
+        @font-face {
+            font-family: "Computer Modern Serif";
+            src: url('/fonts/computer-modern/cmunbx-webfont.eot');
+            src: url('/fonts/computer-modern/cmunbx-webfont.eot?#iefix') format('embedded-opentype'),
+            url('/fonts/computer-modern/cmunbx.otf') format('opentype'),
+            url('/fonts/computer-modern/cmunbx-webfont.woff') format('woff'),
+            url('/fonts/computer-modern/cmunbx-webfont.ttf') format('truetype'),
+            url('/fonts/computer-modern/cmunbx-webfont.svg#cmu_serifbold') format('svg');
+            font-weight: bold;
+            font-style: normal;
+        }
 
-      * {margin: 0; padding: 0;}
-      :host {
-        height: 100vh;
-        width: 100%;
-        display: block;
-        background-color: rgb(211,84,0);
-        font-size: 16px;
-        line-height: 1.33;
-        font-family: "Computer Modern Serif", serif;
-        -webkit-font-smoothing: antialiased
-      }
+        * {margin: 0; padding: 0; box-sizing: border-box;}
 
-      dl {
-        
-      }
-      dl:before {
-        clear: both;
-      }
-      dt {
-        float: left;
-        clear: left;
-        color: rgb(250, 235, 215);
-        font-weight: 600;
-        
-      }
-      dd {
-        float: left;
-        
-      }
+        :host {
+            height: 100vh;
+            display: block;
+            background-color: rgb(211,84,0);
+            /* rgb(228, 123, 54) */
+            font-size: 16px;
+            line-height: 1.33;
+            font-family: "Computer Modern Serif", serif;
+            -webkit-font-smoothing: antialiased;
+            overflow: auto;
+            padding: 30px;
+        }
 
-      h2{ clear: both;}
-    </style>
+        .category-section {
+            margin: 30px 0;
+        }
+        .category-section:after{
+            content: ' ';
+            display: block;
+            visibility: hidden;
+            clear: both;
+        }
 
-    <h1>Einar Valur Adalsteinsson</h1>
-    <time>1978-04-11</time>
+        dl {
 
-    <h2>Nám</h2>
-    <dl>
-      <dt>2011 - 2012</dt>
-      <dt>2005 - 2007</dt>
-      <dd><strong>Háskólinn í Reykjavík</strong></dd>
-      <dd>BS Tölvunarfræði</dd>
+        }
+        dl:before {
+            clear: both;
+        }
+        dt {
+            float: left;
+            clear: left;
+            color: rgb(250, 235, 215);
+            font-weight: 600;
+        }
+        dd {
+            float: left;
+            padding: 0 7px;
+        }
 
-      <dt>2002</dt>
-      <dd><strong>Hogeschool voor de Kunsten Utrecht</strong></dd>
+        h2{ clear: both;}
 
-      <dt>2000 - 2003</dt>
-      <dd><strong>Listaháskóli Íslands</strong></dd>
-      <dd>BA Myndlist</dd>
+        @media (max-width: 480px) {
+            dl {
 
-      <dt>1997 - 2000 </dt>
-      <dd><strong>Fjölbrautaskólinn í Breiðholti</strong></dd>
+            }
+            dl:before {
+                clear: both;
+            }
+            dt {
+                float: none;
+            }
+            dd {
+                float: none;
+                padding: 0;
+            }
 
-      <dt>1995 - 1996</dt>
-      <dd><strong>Fjölbrautaskóli Suðurnesja</strong></dd>
-    </dl>
+            dt {
+                margin-top: 15px;
+            }
+            dt + dt {
+                margin-top: 0;
+            }
 
+            dt:first-of-type {
+                margin-top: 0;
+            }
 
-    <h2>Reynsla</h2>
-    <dl>
-      <dt>2015 - 2016</dt>
-      <dd><strong>99designs</strong></dd>
-      <dd>Melbourne</dd>
+        }
+            
+        </style>
 
-      <dt>2015</dt>
-      <dd><strong>Dropbox</strong></dd>
-      <dd>San Francisco</dd>
+        <h1>Einar Valur Adalsteinsson</h1>
+        <time>1978-04-11</time>
 
-      <dt>2012 - 2014</dt>
-      <dd><strong>Kosmos&amp;Kaos</strong></dd>
-      <dd>Fram- og bakendaforritari</dd>
+        <div class="category-section">
+            <h2>Nám</h2>
+            <dl>
+                <template is="dom-repeat" items="[[cv.education]]">
+                    <template is="dom-repeat" items="[[item.period]]">
+                        <dt>[[item.from]] - [[item.to]]</dt>
+                    </template>
+                    <dd><strong>[[item.title]]</strong></dd>
+                    <template is="dom-repeat" items="[[item.labels]]">
+                        <dd>[[item]]</dd>
+                    </template>
+                </template>
+            </dl>
+        </div>
 
-      <dt>2011</dt>
-      <dd><strong>isProject</strong></dd>
-      <dd>Forritari, kershönnuður, grafískur hönnuður - kersstjóri, framkvæmdarstjóri</dd>
+        <div class="category-section">
+            <h2>Reynsla</h2>
+            <dl>
+                <template is="dom-repeat" items="[[cv.experience]]">
+                    <template is="dom-repeat" items="[[item.period]]">
+                        <dt>[[item.from]] - [[item.to]]</dt>
+                    </template>
+                    <dd><strong>[[item.title]]</strong></dd>
+                    <template is="dom-repeat" items="[[item.labels]]">
+                        <dd>[[item]]</dd>
+                    </template>
+                </template>
+            </dl>
+        </div>
 
-      <dt>2009 - 2010</dt>
-      <dd><strong>Gogoyoko</strong></dd>
-      <dd>Einn af hönnuðum Gogoyoko kersins, bak- og framendahönnuður - AJAX, CSS og HTML forritari</dd>
+        <div class="category-section">
+            <h2>Kunnátta</h2>
+            <dl>
+                <template is="dom-repeat" items="[[cv.skills]]">
+                    <dt><strong>[[item.title]]</strong></dt>
+                    <template is="dom-repeat" items="[[item.labels]]">
+                        <dd>[[item]]</dd>
+                    </template>
+                </template>
+            </dl>
+        </div>
 
-      <dt>2007 - 2009</dt>
-      <dd><strong>Allra Átta</strong></dd>
-      <dd>Yfirmaður þrógunardeildar, keshönnuður, forritari</dd>
+        <div class="category-section">
+            <h2>Viðurkenningar</h2>
+            <dl>
+                <template is="dom-repeat" items="[[cv.awards]]">
+                    <template is="dom-repeat" items="[[item.period]]">
+                        <dt>[[item.from]] - [[item.to]]</dt>
+                    </template>
+                    <dd><strong>[[item.title]]</strong></dd>
+                    <template is="dom-repeat" items="[[item.labels]]">
+                        <dd>[[item]]</dd>
+                    </template>
+                    <template is="dom-repeat" items="[[item.reference]]">
+                        <dd><a href="[[item]]">[[item]]</a></dd>
+                    </template>
+                </template>
+            </dl>
+        </div>
 
-      <dt>2007</dt>
-      <dd><strong>BM ráðgjöf</strong>
-      <dd>Forritari</dd>
+        <div class="category-section">
+            <h2>Stærri verkefni</h2>
+            <dl>
+                <template is="dom-repeat" items="[[cv.projects]]">
+                    <template is="dom-repeat" items="[[item.period]]">
+                        <dt>[[item.from]] - [[item.to]]</dt>
+                    </template>
+                    <dd><strong>[[item.title]]</strong></dd>
+                    <template is="dom-repeat" items="[[item.labels]]">
+                        <dd>[[item]]</dd>
+                    </template>
+                    <template is="dom-repeat" items="[[item.reference]]">
+                        <dd><a href="[[item]]">[[item]]</a></dd>
+                    </template>
+                </template>
+            </dl>
+        </div>
+    </template>
 
-      <dt>2006</dt>
-      <dd><strong>Hexia Software</strong></dd>
-      <dd>Framendaforritari, AJAX/JavaScript forritari</dd>
-
-      <dt>2003</dt>
-      <dd><strong>Skaftfell menningarmiðstöð</strong>
-      <dd>Grafískur hönnuður, veorritari, kokkur</dd>
-
-      <dt>2001</dt>
-      <dd><strong>Spelka - Auglýsingarstofa</strong></dd>
-      <dd>(í samstar við Hitt Húsið) Grafískur hönnuður</dd>
-    </dl>
-
-    <h2>Kunnátta</h2>
-    <dl>
-      <dt>PHP</dt>
-      <dd>Zend, Drupal, Wordpress</dd>
-
-      <dt>JavaScript (ECMAScript 5)</dt>
-      <dd>jQuery YUI, Dojo, D3, Angular / Node.JS</dd>
-
-      <dt>Java</dt>
-      <dd>Spring/Hibernate - Android / OpenGL ES</dd>
-
-      <dt>Python</dt>
-      <dd>Django</dd>
-
-      <dt>ActionScript/Flex</dt>
-      <dd></dd>
-
-      <dt>C# (.NET)</dt>
-      <dd></dd>
-
-      <dt>CSS/CSS3 / LESS / SASS / Compass</dt>
-      <dd></dd>
-
-      <dt>HTML/XML/HTML5</dt>
-      <dd></dd>
-
-      <dt>(C / C++)</dt>
-      <dd></dd>
-
-      <dt>SQL (MySQL)</dt>
-      <dd></dd>      
-      <dt>Unit/LInux</dt>
-      <dd></dd>
-
-      <dt>Apache</dt>
-      <dd></dd>  
-
-      <dt>Photoshop - Illustrator - InDesign</dt>
-      <dd></dd>
-    </dl>
-
-    <h2>Viðurkenningar -  (SVEF) verdlaun</h2>
-    <dl>
-      <dt>2013</dt>
-      <dd><strong>Bláa lónið</strong> / http://bluelagoon.com</dd>
-      <dd>Besti vefurinn</dd>
-
-      <dt>2008</dt>
-      <dd><strong>kvikmyndir.is</strong> / http://kvikmyndir.is</dd>
-      <dd>Besti afþreyingarvefurinn</dd>
-    </dl>
-
-    <h2>Stærri verkefni</h2>
-    <dl>
-      <dt>2008 - 2015</dt>
-      <dd><strong>Stjornvisi</strong> / http://stjornvisi.is</dd>
-      <dd>Throgun og vidhald</dd>
-
-      <dt>2014</dt>
-      <dd>Spurningarkerfi fyrir sveitastjornarkostningar 2014 mbl.is/kosmos&amp;kaos/tjarnargata</dd>
-    </dl>
-
-  </template>
-
-  <script>
-    Polymer({
-
-      is: 'my-crappy-homepage-app',
-
-    });
-  </script>
+    <script>
+        Polymer({
+            is: 'my-crappy-homepage-app'
+        });
+    </script>
 </dom-module>
