@@ -1,0 +1,206 @@
+{
+    "cv": {
+        "education": [
+            {
+                "period": [
+                    {"from": 2011, "to": 2012},
+                    {"from": 2005, "to": 2007}
+                ],
+                "title": "Háskólinn í Reykjavík",
+                "labels": ["BS Tölvunarfræði"]
+            },
+            {
+                "period": [
+                    {"from": 2002, "to": 2002}
+                ],
+                "title": "Hogetitle voor de Kunsten Utrecht",
+                "labels": []
+            },
+
+            {
+                "period": [
+                    {"from": 2000, "to": 2003}
+                ],
+                "title": "Listaháskóli Íslands",
+                "labels": ["BA Myndlist"]
+            },
+            {
+                "period": [
+                    {"from": 1997, "to": 2000}
+                ],
+                "title": "Fjölbrautaskólinn í Breiðholti",
+                "labels": []
+            },
+            {
+                "period": [
+                    {"from": 1995, "to": 1996}
+                ],
+                "title": "Fjölbrautaskóli Suðurnesja",
+                "labels": []
+            }
+        ],
+        "experience": [
+            {
+                "period": [
+                    {"from": 2015, "to": 2016}
+                ],
+                "title": "99designs",
+                "labels": ["Melbourne"]
+            },
+            {
+                "period": [
+                    {"from": 2015, "to": 2015}
+                ],
+                "title": "Dropbox",
+                "labels": ["San Francisco"]
+            },
+            {
+                "period": [
+                    {"from": 2012, "to": 2014}
+                ],
+                "title": "Kosmos&Kaos",
+                "labels": ["Fram- og bakendaforritari"]
+            },
+            {
+                "period": [
+                    {"from": 2011, "to": 2011}
+                ],
+                "title": "isProject",
+                "labels": ["Forritari, kershönnuður, grafískur hönnuður - kersstjóri, framkvæmdarstjóri"]
+            },
+            {
+                "period": [
+                    {"from": 2009, "to": 2010}
+                ],
+                "title": "Gogoyoko",
+                "labels": ["Einn af hönnuðum Gogoyoko kersins, bak- og framendahönnuður - AJAX, CSS og HTML forritari"]
+            },
+            {
+                "period": [
+                    {"from": 2007, "to": 2009}
+                ],
+                "title": "Allra Átta",
+                "labels": ["Yfirmaður þrógunardeildar, keshönnuður, forritari"]
+            },
+            {
+                "period": [
+                    {"from": 2007, "to": 2007}
+                ],
+                "title": "BM ráðgjöf",
+                "labels": ["Forritari"]
+            },
+            {
+                "period": [
+                    {"from": 2006, "to": 2006}
+                ],
+                "title": "Hexia Software",
+                "labels": ["Framendaforritari, AJAX/JavaScript forritari"]
+            },
+            {
+                "period": [
+                    {"from": 2003, "to": 2003}
+                ],
+                "title": "Skaftfell menningarmiðstöð",
+                "labels": ["Grafískur hönnuður, veorritari, kokkur"]
+            },
+            {
+                "period": [
+                    {"from": 2001, "to": 2001}
+                ],
+                "title": "Spelka - Auglýsingarstofa",
+                "labels": ["(í samstar við Hitt Húsið) Grafískur hönnuður"]
+            }
+        ],
+        "skills": [
+            {
+                "title": "PHP",
+                "labels": ["Zend, Drupal, Wordpress"]
+            },
+            {
+                "title": "JavaScript (ECMAScript 5)",
+                "labels": ["jQuery YUI, Dojo, D3, Angular / Node.JS"]
+            },
+            {
+                "title": "Java",
+                "labels": ["Spring/Hibernate - Android / OpenGL ES"]
+            },
+            {
+                "title": "Python",
+                "labels": ["Django"]
+            },
+            {
+                "title": "ActionScript/Flex",
+                "labels": []
+            },
+
+            {
+                "title": "C# (.NET)",
+                "labels": []
+            },
+            {
+                "title": "CSS/CSS3 / LESS / SASS / Compass",
+                "labels": []
+            },
+            {
+                "title": "HTML/XML/HTML5",
+                "labels": ["Melbourne"]
+            },
+            {
+                "title": "(C / C++)",
+                "labels": []
+            },
+            {
+                "title": "SQL (MySQL)",
+                "labels": []
+            },
+            {
+                "title": "Unit/LInux",
+                "labels": []
+            },
+            {
+                "title": "Apache",
+                "labels": []
+            },
+            {
+                "title": "Photoshop - Illustrator - InDesign",
+                "labels": []
+            }
+        ],
+        "awards": [
+            {
+                "period": [
+                    {"from": 2013, "to": 2013}
+                ],
+                "title": "Bláa lónið",
+                "reference": ["http://bluelagoon.com"],
+                "labels": ["Besti vefurinn"]
+            },
+            {
+                "period": [
+                    {"from": 2008, "to": 2008}
+                ],
+                "reference": ["http://kvikmyndir.is"],
+                "title": "kvikmyndir.is",
+                "labels": ["Besti afþreyingarvefurinn"]
+            }
+        ],
+        "projects": [
+            {
+                "period": [
+                    {"from": 2008, "to": 2015}
+                ],
+                "reference": ["http://stjornvisi.is"],
+                "title": "Stjornvisi",
+                "labels": ["Throgun og vidhald"]
+            },
+            {
+                "period": [
+                    {"from": 2014, "to": 2014}
+                ],
+                "reference": [],
+                "title": "Spurningarkerfi fyrir sveitastjornarkostningar 2014",
+                "labels": ["mbl.is/kosmos&kaos/tjarnargata"]
+            }
+        ]
+    }
+}
