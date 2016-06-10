@@ -5,11 +5,58 @@
     <title>my-crappy-homepage</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="/bower_components/webcomponentsjs/webcomponents-lite.js"></script>
-    <link rel="import" href="/src/my-crappy-homepage-app/my-crappy-homepage-app.html">
-    <style type="text/css">* {margin: 0; padding: 0;}</style>
+    <link rel="import" href="/src/my-crappy-homepage-app/my-crappy-homepage-app.html" async>
+    <style type="text/css">
+        *, *:before, *:after {margin: 0; box-sizing: border-box;}
+        @keyframes rotating {
+            from{
+                transform: rotate(0deg);
+                transform-origin: center;
+            }
+            to{
+                transform: rotate(360deg);
+                transform-origin: center;
+            }
+        }
+        my-crappy-homepage-app:unresolved {
+            display: flex;
+            background-color: #D35400;
+            height: 100vh;
+            width: 100vw;
+            align-items: center;
+            justify-content: center;
+        }
+        svg {
+            transform: scale(1.5);
+        }
+        #record {
+            animation: rotating 2s linear infinite;
+        }
+    </style>
   </head>
   <body>
-    <my-crappy-homepage-app></my-crappy-homepage-app>
+    <my-crappy-homepage-app>
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+            width="124.333px" height="125px" viewBox="0 0 124.333 125">
+            <g id="record">
+                <ellipse cx="62.167" cy="62.5" rx="59.833" ry="60.562"/>
+                <ellipse fill="#FAEBD7" cx="62.167" cy="62.5" rx="26.676" ry="26.999"/>
+                <ellipse cx="62.167" cy="62.5" rx="4.06" ry="4.108"/>
+            </g>
+        </svg>
+    </my-crappy-homepage-app>
+  <script>
+      var webComponentsSupported = ('registerElement' in document
+      && 'import' in document.createElement('link')
+      && 'content' in document.createElement('template'));
+      if (!webComponentsSupported) {
+          var script = document.createElement('script');
+          script.onload = finishLazyLoading;
+          script.src = '/bower_components/webcomponentsjs/webcomponents-lite.min.js';
+          document.head.appendChild(script);
+      } else {
+          window.Polymer = window.Polymer || {dom: 'shadow'};
+      }
+  </script>
   </body>
 </html>
