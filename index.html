@@ -5,6 +5,7 @@
     <title>my-crappy-homepage</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="/bower_components/webcomponentsjs/webcomponents-lite.min.js" async></script>
     <link rel="import" href="/src/my-crappy-homepage-app/my-crappy-homepage-app.html" async>
     <style type="text/css">
         *, *:before, *:after {margin: 0; box-sizing: border-box;}
@@ -46,17 +47,17 @@
         </svg>
     </my-crappy-homepage-app>
   <script>
-      var webComponentsSupported = ('registerElement' in document
-      && 'import' in document.createElement('link')
-      && 'content' in document.createElement('template'));
-      if (!webComponentsSupported) {
-          var script = document.createElement('script');
-          script.onload = finishLazyLoading;
-          script.src = '/bower_components/webcomponentsjs/webcomponents-lite.min.js';
-          document.head.appendChild(script);
-      } else {
-          window.Polymer = window.Polymer || {dom: 'shadow'};
-      }
+      //var webComponentsSupported = ('registerElement' in document
+      //&& 'import' in document.createElement('link')
+      //&& 'content' in document.createElement('template'));
+      //if (!webComponentsSupported) {
+    //      var script = document.createElement('script');
+    //      script.onload = finishLazyLoading;
+    //      script.src = '/bower_components/webcomponentsjs/webcomponents-lite.min.js';
+    //      document.head.appendChild(script);
+    //  } else {
+    //      window.Polymer = window.Polymer || {dom: 'shadow'};
+    //  }
   </script>
   </body>
 </html>
