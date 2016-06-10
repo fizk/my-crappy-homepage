@@ -126,7 +126,7 @@
             }
 
         }
-            
+
         </style>
 
         <h1>Einar Valur Adalsteinsson</h1>
@@ -213,7 +213,11 @@
 
     <script>
         Polymer({
-            is: 'my-crappy-homepage-app'
+            is: 'my-crappy-homepage-app',
+
+            created: function () {
+                this.removeAttribute('unresolved');
+            }
         });
     </script>
 </dom-module>
