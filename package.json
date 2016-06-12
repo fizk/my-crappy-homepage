@@ -1,0 +1,36 @@
+{
+  "name": "my-crappy-homepage",
+  "version": "1.0.0",
+  "description": "None",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fizk/my-crappy-homepage.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fizk/my-crappy-homepage/issues"
+  },
+  "homepage": "https://github.com/fizk/my-crappy-homepage#readme",
+    "dependencies": {
+    },
+    "devDependencies": {
+        "gulp": "^3.9.1",
+        "gulp-autoprefixer": "^3.1.0",
+        "gulp-sass": "^2.2.0",
+        "gulp-vulcanize": "^6.1.0",
+        "gulp-watch": "^4.3.5",
+        "babel-preset-es2015": "^6.6.0",
+        "gulp-babel": "^6.1.2",
+        "gulp-crisper": "^1.0.0",
+        "gulp-if": "^2.0.0",
+        "gulp-sourcemaps": "^1.6.0"
+    }
+}
