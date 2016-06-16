@@ -47,3 +47,8 @@ gulp.task('watch', function () {
     gulp.watch('./src/**/*.scss', ['sass', 'vulcanize']);
 });
 
+gulp.task('build', function () {
+    return gulp.src('./bower_components/webcomponentsjs/webcomponents-lite.min.js')
+        .pipe(gulp.dest('./public/scripts'));
+});
+
