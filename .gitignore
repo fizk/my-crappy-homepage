@@ -147,3 +147,7 @@ fabric.properties
 
 ### node
 node_modules
+
+### Application
+public/*
+!public/index.html
