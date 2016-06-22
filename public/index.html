@@ -5,7 +5,26 @@
     <title>my-crappy-homepage</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <script>window.Polymer = window.Polymer || {dom: 'shadow'};</script>
     <script src="/scripts/webcomponents-lite.min.js" async></script>
+      <link rel="apple-touch-icon" sizes="57x57" href="/favicon/apple-icon-57x57.png">
+      <link rel="apple-touch-icon" sizes="60x60" href="/favicon/apple-icon-60x60.png">
+      <link rel="apple-touch-icon" sizes="72x72" href="/favicon/apple-icon-72x72.png">
+      <link rel="apple-touch-icon" sizes="76x76" href="/favicon/apple-icon-76x76.png">
+      <link rel="apple-touch-icon" sizes="114x114" href="/favicon/apple-icon-114x114.png">
+      <link rel="apple-touch-icon" sizes="120x120" href="/favicon/apple-icon-120x120.png">
+      <link rel="apple-touch-icon" sizes="144x144" href="/favicon/apple-icon-144x144.png">
+      <link rel="apple-touch-icon" sizes="152x152" href="/favicon/apple-icon-152x152.png">
+      <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-icon-180x180.png">
+      <link rel="icon" type="image/png" sizes="192x192"  href="/favicon/android-icon-192x192.png">
+      <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+      <link rel="icon" type="image/png" sizes="96x96" href="/favicon/favicon-96x96.png">
+      <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+      <link rel="manifest" href="/favicon/manifest.json">
+      <meta name="msapplication-TileColor" content="#ffffff">
+      <meta name="msapplication-TileImage" content="/favicon/ms-icon-144x144.png">
+      <meta name="theme-color" content="#ffffff">
+
     <link rel="import" href="/dist/my-crappy-homepage-app.html" async>
     <style type="text/css">
         *, *:before, *:after {margin: 0; box-sizing: border-box;}
@@ -21,23 +40,36 @@
         }
         my-crappy-homepage-app[unresolved] {
             display: flex;
-            background-color: #D35400;
             height: 100vh;
             width: 100vw;
             align-items: center;
             justify-content: center;
         }
-        svg {
+        body {
+            -webkit-font-smoothing: antialiased;
+            background-color: #D35400;
+        }
+        .index__preloader {
             transform: scale(1.5);
         }
         #record {
             animation: rotating 2s linear infinite;
         }
+
+        .index__app-toolbar {
+            background-color: rgba(0,0,0, .12);
+            height: 64px;
+            width: 100%;
+            top: 0;
+            left: 0;
+            position: fixed;
+        }
     </style>
   </head>
   <body>
     <my-crappy-homepage-app unresolved>
-        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+        <div class="index__app-toolbar"></div>
+        <svg class="index__preloader" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
             width="124.333px" height="125px" viewBox="0 0 124.333 125">
             <g id="record">
                 <ellipse cx="62.167" cy="62.5" rx="59.833" ry="60.562"/>
@@ -56,7 +88,7 @@
     //      script.src = '/bower_components/webcomponentsjs/webcomponents-lite.min.js';
     //      document.head.appendChild(script);
     //  } else {
-    //      window.Polymer = window.Polymer || {dom: 'shadow'};
+
     //  }
   </script>
   </body>
