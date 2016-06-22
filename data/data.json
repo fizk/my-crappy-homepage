@@ -6,8 +6,8 @@
                     {"from": 2011, "to": 2012},
                     {"from": 2005, "to": 2007}
                 ],
-                "title": "Háskólinn í Reykjavík",
-                "labels": ["BS Tölvunarfræði"]
+                "title": "Reykjavik University",
+                "labels": ["BS Computer science"]
             },
             {
                 "period": [
@@ -21,8 +21,8 @@
                 "period": [
                     {"from": 2000, "to": 2003}
                 ],
-                "title": "Listaháskóli Íslands",
-                "labels": ["BA Myndlist"]
+                "title": "Iceland Academy of the Arts",
+                "labels": ["BA Arts"]
             },
             {
                 "period": [
@@ -45,116 +45,141 @@
                     {"from": 2015, "to": 2016}
                 ],
                 "title": "99designs",
-                "labels": ["Melbourne"]
+                "labels": [
+                    "Melbourne",
+                    "Full stack developer"
+                ]
             },
             {
                 "period": [
                     {"from": 2015, "to": 2015}
                 ],
                 "title": "Dropbox",
-                "labels": ["San Francisco"]
+                "labels": [
+                    "San Francisco",
+                    "Front end developer"
+                ]
             },
             {
                 "period": [
                     {"from": 2012, "to": 2014}
                 ],
                 "title": "Kosmos&Kaos",
-                "labels": ["Fram- og bakendaforritari"]
+                "labels": [
+                    "Full stack developer",
+                    "Dev lead"
+                ]
             },
             {
                 "period": [
                     {"from": 2011, "to": 2011}
                 ],
                 "title": "isProject",
-                "labels": ["Forritari, kershönnuður, grafískur hönnuður - kersstjóri, framkvæmdarstjóri"]
+                "labels": [
+                    "Full stack developer",
+                    "Graphic designer",
+                    "System designer",
+                    "Managing Director"
+                ]
             },
             {
                 "period": [
                     {"from": 2009, "to": 2010}
                 ],
                 "title": "Gogoyoko",
-                "labels": ["Einn af hönnuðum Gogoyoko kersins, bak- og framendahönnuður - AJAX, CSS og HTML forritari"]
+                "labels": [
+                    "Full stack developer",
+                    "System designer"
+                ]
             },
             {
                 "period": [
                     {"from": 2007, "to": 2009}
                 ],
                 "title": "Allra Átta",
-                "labels": ["Yfirmaður þrógunardeildar, keshönnuður, forritari"]
+                "labels": [
+                    "Full stack developer",
+                    "System designer",
+                    "Dev lead",
+                    "Managing Director"
+                ]
             },
             {
                 "period": [
                     {"from": 2007, "to": 2007}
                 ],
                 "title": "BM ráðgjöf",
-                "labels": ["Forritari"]
+                "labels": [
+                    "Developer"
+                ]
             },
             {
                 "period": [
                     {"from": 2006, "to": 2006}
                 ],
                 "title": "Hexia Software",
-                "labels": ["Framendaforritari, AJAX/JavaScript forritari"]
+                "labels": [
+                    "Front end developer"
+                ]
             },
             {
                 "period": [
                     {"from": 2003, "to": 2003}
                 ],
                 "title": "Skaftfell menningarmiðstöð",
-                "labels": ["Grafískur hönnuður, veorritari, kokkur"]
+                "labels": [
+                    "Developer",
+                    "Graphic designer",
+                    "Cook"
+                ]
             },
             {
                 "period": [
                     {"from": 2001, "to": 2001}
                 ],
                 "title": "Spelka - Auglýsingarstofa",
-                "labels": ["(í samstar við Hitt Húsið) Grafískur hönnuður"]
+                "labels": [
+                    "Graphic designer"
+                ]
             }
         ],
         "skills": [
             {
                 "title": "PHP",
-                "labels": ["Zend, Drupal, Wordpress"]
+                "labels": ["Symfony", "Doctrine", "Zend, Drupal, Wordpress"]
             },
             {
-                "title": "JavaScript (ECMAScript 5)",
-                "labels": ["jQuery YUI, Dojo, D3, Angular / Node.JS"]
+                "title": "JavaScript (ES5 / ES6 / ES2015)",
+                "labels": [
+                    "Node",
+                    "React",
+                    "Polymer",
+                    "VA"
+                ]
             },
             {
                 "title": "Java",
-                "labels": ["Spring/Hibernate - Android / OpenGL ES"]
+                "labels": [
+                    "Spring/Hibernate",
+                    "Android / OpenGL ES"
+                ]
             },
             {
                 "title": "Python",
                 "labels": ["Django"]
             },
             {
-                "title": "ActionScript/Flex",
-                "labels": []
-            },
-
-            {
-                "title": "C# (.NET)",
-                "labels": []
-            },
-            {
-                "title": "CSS/CSS3 / LESS / SASS / Compass",
-                "labels": []
-            },
-            {
-                "title": "HTML/XML/HTML5",
-                "labels": ["Melbourne"]
-            },
-            {
-                "title": "(C / C++)",
-                "labels": []
+                "title": "CSS/CSS3 / LESS / SASS",
+                "labels": [
+                    "VA frameworks"
+                ]
             },
             {
                 "title": "SQL (MySQL)",
                 "labels": []
             },
             {
-                "title": "Unit/LInux",
+                "title": "Unit/Linux",
                 "labels": []
             },
             {
@@ -162,8 +187,13 @@
                 "labels": []
             },
             {
-                "title": "Photoshop - Illustrator - InDesign",
-                "labels": []
+                "title": "Graphic editors",
+                "labels": [
+                    "Sketch",
+                    "Photoshop",
+                    "Illustrator",
+                    "InDesign"
+                ]
             }
         ],
         "awards": [
@@ -173,7 +203,7 @@
                 ],
                 "title": "Bláa lónið",
                 "reference": ["http://bluelagoon.com"],
-                "labels": ["Besti vefurinn"]
+                "labels": ["Best website 20013"]
             },
             {
                 "period": [
@@ -181,7 +211,7 @@
                 ],
                 "reference": ["http://kvikmyndir.is"],
                 "title": "kvikmyndir.is",
-                "labels": ["Besti afþreyingarvefurinn"]
+                "labels": ["Best entertainment website 2008"]
             }
         ],
         "projects": [
@@ -191,7 +221,10 @@
                 ],
                 "reference": ["http://stjornvisi.is"],
                 "title": "Stjornvisi",
-                "labels": ["Throgun og vidhald"]
+                "labels": [
+                    "Development",
+                    "Maintenance"
+                ]
             },
             {
                 "period": [
@@ -199,7 +232,9 @@
                 ],
                 "reference": [],
                 "title": "Spurningarkerfi fyrir sveitastjornarkostningar 2014",
-                "labels": ["mbl.is/kosmos&kaos/tjarnargata"]
+                "labels": [
+                    "Development"
+                ]
             }
         ]
     }

@@ -1,0 +1,196 @@
+<link rel="import" href="../../bower_components/firebase-element/firebase-document.html">
+<style type="text/css">
+    @font-face {
+        font-family: "Computer Modern Serif";
+        src: url('/fonts/computer-modern/cmunrm-webfont.eot');
+        src: url('/fonts/computer-modern/cmunrm-webfont.eot?#iefix') format('embedded-opentype'),
+        url('/fonts/computer-modern/cmunrm.otf') format('opentype'),
+        url('/fonts/computer-modern/cmunrm-webfont.woff') format('woff'),
+        url('/fonts/computer-modern/cmunrm-webfont.ttf') format('truetype'),
+        url('/fonts/computer-modern/cmunrm-webfont.svg#cmu_serifroman') format('svg');
+        font-weight: normal;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: "Computer Modern Serif";
+        src: url('/fonts/computer-modern/cmunbx-webfont.eot');
+        src: url('/fonts/computer-modern/cmunbx-webfont.eot?#iefix') format('embedded-opentype'),
+        url('/fonts/computer-modern/cmunbx.otf') format('opentype'),
+        url('/fonts/computer-modern/cmunbx-webfont.woff') format('woff'),
+        url('/fonts/computer-modern/cmunbx-webfont.ttf') format('truetype'),
+        url('/fonts/computer-modern/cmunbx-webfont.svg#cmu_serifbold') format('svg');
+        font-weight: bold;
+        font-style: normal;
+    }
+</style>
+<dom-module id="page-cv">
+    <style type="text/css">
+        * {margin: 0; padding: 0; box-sizing: border-box;}
+
+        :host {
+            height: 100vh;
+            display: block;
+            padding: 30px;
+            font-size: 16px;
+            line-height: 1.33;
+            font-family: "Computer Modern Serif", serif;
+            color: rgb(50, 50, 50);
+        }
+
+        .category-section {
+            margin: 30px 0;
+        }
+        .category-section:after{
+            content: ' ';
+            display: block;
+            visibility: hidden;
+            clear: both;
+        }
+
+        dl {
+
+        }
+        dl:before {
+            clear: both;
+        }
+        dt {
+            float: left;
+            clear: left;
+            color: rgb(250, 235, 215);
+            font-weight: 600;
+        }
+        dd {
+            float: left;
+            padding: 0 7px;
+        }
+        dd a {
+            color: rgb(50, 50, 50);
+        }
+
+        h2{ clear: both;}
+
+        @media (max-width: 480px) {
+            dl {
+
+            }
+            dl:before {
+                clear: both;
+            }
+            dt {
+                float: none;
+            }
+            dd {
+                float: none;
+                padding: 0;
+            }
+
+            dt {
+                margin-top: 15px;
+            }
+            dt + dt {
+                margin-top: 0;
+            }
+
+            dt:first-of-type {
+                margin-top: 0;
+            }
+
+        }
+    </style>
+
+    <template>
+
+        <firebase-document
+            data-as-object="true"
+            location="https://my-crappy-homepage-b8e48.firebaseio.com/cv"
+            data="{{cv}}"></firebase-document>
+
+        <div>
+            <h1>Einar Valur Adalsteinsson</h1>
+            <time>1978-04-11</time>
+
+            <div class="category-section">
+                <h2>Experience</h2>
+                <dl>
+                    <template is="dom-repeat" items="[[cv.experience]]">
+                        <template is="dom-repeat" items="[[item.period]]">
+                            <dt>[[item.from]] - [[item.to]]</dt>
+                        </template>
+                        <dd><strong>[[item.title]]</strong></dd>
+                        <template is="dom-repeat" items="[[item.labels]]">
+                            <dd>[[item]]</dd>
+                        </template>
+                    </template>
+                </dl>
+            </div>
+
+            <div class="category-section">
+                <h2>Education</h2>
+                <dl>
+                    <template is="dom-repeat" items="[[cv.education]]">
+                        <template is="dom-repeat" items="[[item.period]]">
+                            <dt>[[item.from]] - [[item.to]]</dt>
+                        </template>
+                        <dd><strong>[[item.title]]</strong></dd>
+                        <template is="dom-repeat" items="[[item.labels]]">
+                            <dd>[[item]]</dd>
+                        </template>
+                    </template>
+                </dl>
+            </div>
+
+            <div class="category-section">
+                <h2>Skills</h2>
+                <dl>
+                    <template is="dom-repeat" items="[[cv.skills]]">
+                        <dt><strong>[[item.title]]</strong></dt>
+                        <template is="dom-repeat" items="[[item.labels]]">
+                            <dd>[[item]]</dd>
+                        </template>
+                    </template>
+                </dl>
+            </div>
+
+            <div class="category-section">
+                <h2>Accreditation</h2>
+                <dl>
+                    <template is="dom-repeat" items="[[cv.awards]]">
+                        <template is="dom-repeat" items="[[item.period]]">
+                            <dt>[[item.from]] - [[item.to]]</dt>
+                        </template>
+                        <dd><strong>[[item.title]]</strong></dd>
+                        <template is="dom-repeat" items="[[item.labels]]">
+                            <dd>[[item]]</dd>
+                        </template>
+                        <template is="dom-repeat" items="[[item.reference]]">
+                            <dd><a href="[[item]]">[[item]]</a></dd>
+                        </template>
+                    </template>
+                </dl>
+            </div>
+
+            <div class="category-section">
+                <h2>Projects</h2>
+                <dl>
+                    <template is="dom-repeat" items="[[cv.projects]]">
+                        <template is="dom-repeat" items="[[item.period]]">
+                            <dt>[[item.from]] - [[item.to]]</dt>
+                        </template>
+                        <dd><strong>[[item.title]]</strong></dd>
+                        <template is="dom-repeat" items="[[item.labels]]">
+                            <dd>[[item]]</dd>
+                        </template>
+                        <template is="dom-repeat" items="[[item.reference]]">
+                            <dd><a href="[[item]]">[[item]]</a></dd>
+                        </template>
+                    </template>
+                </dl>
+            </div>
+        </div>
+    </template>
+    <script>
+        Polymer({
+            is: 'page-cv'
+        })
+    </script>
+</dom-module>

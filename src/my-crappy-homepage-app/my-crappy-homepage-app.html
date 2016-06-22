@@ -1,223 +1,154 @@
 <link rel="import" href="../../bower_components/polymer/polymer.html">
-<link rel="import" href="../../bower_components/firebase-element/firebase-document.html">
+
+<link rel="import" href="../../bower_components/app-layout/app-drawer-layout/app-drawer-layout.html">
+<link rel="import" href="../../bower_components/app-layout/app-drawer/app-drawer.html">
+<link rel="import" href="../../bower_components/app-layout/app-header/app-header.html">
+<link rel="import" href="../../bower_components/app-layout/app-header-layout/app-header-layout.html">
+<link rel="import" href="../../bower_components/app-layout/app-toolbar/app-toolbar.html">
+<link rel="import" href="../../bower_components/app-route/app-location.html">
+<link rel="import" href="../../bower_components/app-route/app-route.html">
+
+<link rel="import" href="../../bower_components/paper-icon-button/paper-icon-button.html">
+<link rel="import" href="../../bower_components/paper-item/paper-item.html">
+<link rel="import" href="../../bower_components/paper-menu/paper-menu.html">
+<link rel="import" href="../../bower_components/paper-tabs/paper-tabs.html">
+
+<link rel="import" href="../../bower_components/neon-animation/neon-animated-pages.html">
+
+<link rel="import" href="../../bower_components/iron-selector/iron-selector.html">
+<link rel="import" href="../../bower_components/iron-flex-layout/iron-flex-layout.html">
+<link rel="import" href="../../bower_components/iron-icons/iron-icons.html">
+<link rel="import" href="../../bower_components/iron-media-query/iron-media-query.html">
+
+<link rel="import" href="../pages/page-cv.html">
 
 <dom-module id="my-crappy-homepage-app">
-  <template>
-      <firebase-document
-              data-as-object="true"
-              location="https://my-crappy-homepage-b8e48.firebaseio.com/cv"
-              data="{{cv}}"></firebase-document>
+    <template>
         <style>
-        /*https://github.com/spratt/Computer-Modern */
-        /* http://checkmyworking.com/cm-web-fonts/ */
-        @font-face {
-            font-family: "Computer Modern Serif";
-            src: url('/fonts/computer-modern/cmunrm-webfont.eot');
-            src: url('/fonts/computer-modern/cmunrm-webfont.eot?#iefix') format('embedded-opentype'),
-            url('/fonts/computer-modern/cmunrm.otf') format('opentype'),
-            url('/fonts/computer-modern/cmunrm-webfont.woff') format('woff'),
-            url('/fonts/computer-modern/cmunrm-webfont.ttf') format('truetype'),
-            url('/fonts/computer-modern/cmunrm-webfont.svg#cmu_serifroman') format('svg');
-            font-weight: normal;
-            font-style: normal;
-        }
-        /*@font-face {*/
-            /*font-family: "Computer Modern Serif";*/
-            /*src: url('/fonts/computer-modern/cmunsl-webfont.eot');*/
-            /*src: url('/fonts/computer-modern/cmunsl-webfont.eot?#iefix') format('embedded-opentype'),*/
-            /*url('/fonts/computer-modern/cmunsl.otf') format('opentype'),*/
-            /*url('/fonts/computer-modern/cmunsl-webfont.woff') format('woff'),*/
-            /*url('/fonts/computer-modern/cmunsl-webfont.ttf') format('truetype'),*/
-            /*url('/fonts/computer-modern/cmunsl-webfont.svg#cmu_serif_extraromanslanted') format('svg');*/
-            /*font-weight: normal;*/
-            /*font-style: italic;*/
-        /*}*/
-        /*@font-face {*/
-            /*font-family: "Computer Modern Serif";*/
-            /*src: url('/fonts/computer-modern/cmunbl-webfont.eot');*/
-            /*src: url('/fonts/computer-modern/cmunbl-webfont.eot?#iefix') format('embedded-opentype'),*/
-            /*url('/fonts/computer-modern/cmunbl.otf') format('opentype'),*/
-            /*url('/fonts/computer-modern/cmunbl-webfont.woff') format('woff'),*/
-            /*url('/fonts/computer-modern/cmunbl-webfont.ttf') format('truetype'),*/
-            /*url('/fonts/computer-modern/cmunbl-webfont.svg#cmu_serif_extraboldslanted') format('svg');*/
-            /*font-weight: bold;*/
-            /*font-style: italic;*/
-        /*}*/
-        @font-face {
-            font-family: "Computer Modern Serif";
-            src: url('/fonts/computer-modern/cmunbx-webfont.eot');
-            src: url('/fonts/computer-modern/cmunbx-webfont.eot?#iefix') format('embedded-opentype'),
-            url('/fonts/computer-modern/cmunbx.otf') format('opentype'),
-            url('/fonts/computer-modern/cmunbx-webfont.woff') format('woff'),
-            url('/fonts/computer-modern/cmunbx-webfont.ttf') format('truetype'),
-            url('/fonts/computer-modern/cmunbx-webfont.svg#cmu_serifbold') format('svg');
-            font-weight: bold;
-            font-style: normal;
-        }
-
-        * {margin: 0; padding: 0; box-sizing: border-box;}
-
-        :host {
-            height: 100vh;
-            display: block;
-            background-color: rgb(211,84,0);
-            /* rgb(228, 123, 54) */
-            font-size: 16px;
-            line-height: 1.33;
-            font-family: "Computer Modern Serif", serif;
-            -webkit-font-smoothing: antialiased;
-            overflow: auto;
-            padding: 30px;
-            color: rgb(50, 50, 50);
-        }
-
-        .category-section {
-            margin: 30px 0;
-        }
-        .category-section:after{
-            content: ' ';
-            display: block;
-            visibility: hidden;
-            clear: both;
-        }
-
-        dl {
-
-        }
-        dl:before {
-            clear: both;
-        }
-        dt {
-            float: left;
-            clear: left;
-            color: rgb(250, 235, 215);
-            font-weight: 600;
-        }
-        dd {
-            float: left;
-            padding: 0 7px;
-        }
-        dd a {
-            color: rgb(50, 50, 50);
-        }
-
-        h2{ clear: both;}
-
-        @media (max-width: 480px) {
-            dl {
-
+            :host {
+                font-size: 16px;
+                line-height: 1.33;
+                font-family: "Computer Modern Serif", serif;
+                color: rgb(50, 50, 50);
             }
-            dl:before {
-                clear: both;
-            }
-            dt {
-                float: none;
-            }
-            dd {
-                float: none;
-                padding: 0;
+            /*https://github.com/spratt/Computer-Modern */
+            /* http://checkmyworking.com/cm-web-fonts/ */
+            @font-face {
+                font-family: "Computer Modern Serif";
+                src: url('/fonts/computer-modern/cmunrm-webfont.eot');
+                src: url('/fonts/computer-modern/cmunrm-webfont.eot?#iefix') format('embedded-opentype'),
+                url('/fonts/computer-modern/cmunrm.otf') format('opentype'),
+                url('/fonts/computer-modern/cmunrm-webfont.woff') format('woff'),
+                url('/fonts/computer-modern/cmunrm-webfont.ttf') format('truetype'),
+                url('/fonts/computer-modern/cmunrm-webfont.svg#cmu_serifroman') format('svg');
+                font-weight: normal;
+                font-style: normal;
             }
 
-            dt {
-                margin-top: 15px;
-            }
-            dt + dt {
-                margin-top: 0;
+            /*@font-face {*/
+                /*font-family: "Computer Modern Serif";*/
+                /*src: url('/fonts/computer-modern/cmunsl-webfont.eot');*/
+                /*src: url('/fonts/computer-modern/cmunsl-webfont.eot?#iefix') format('embedded-opentype'),*/
+                /*url('/fonts/computer-modern/cmunsl.otf') format('opentype'),*/
+                /*url('/fonts/computer-modern/cmunsl-webfont.woff') format('woff'),*/
+                /*url('/fonts/computer-modern/cmunsl-webfont.ttf') format('truetype'),*/
+                /*url('/fonts/computer-modern/cmunsl-webfont.svg#cmu_serif_extraromanslanted') format('svg');*/
+                /*font-weight: normal;*/
+                /*font-style: italic;*/
+            /*}*/
+
+            @font-face {
+                font-family: "Computer Modern Serif";
+                src: url('/fonts/computer-modern/cmunbx-webfont.eot');
+                src: url('/fonts/computer-modern/cmunbx-webfont.eot?#iefix') format('embedded-opentype'),
+                url('/fonts/computer-modern/cmunbx.otf') format('opentype'),
+                url('/fonts/computer-modern/cmunbx-webfont.woff') format('woff'),
+                url('/fonts/computer-modern/cmunbx-webfont.ttf') format('truetype'),
+                url('/fonts/computer-modern/cmunbx-webfont.svg#cmu_serifbold') format('svg');
+                font-weight: bold;
+                font-style: normal;
             }
 
-            dt:first-of-type {
-                margin-top: 0;
+            /*@font-face {*/
+                /*font-family: "Computer Modern Serif";*/
+                /*src: url('/fonts/computer-modern/cmunbl-webfont.eot');*/
+                /*src: url('/fonts/computer-modern/cmunbl-webfont.eot?#iefix') format('embedded-opentype'),*/
+                /*url('/fonts/computer-modern/cmunbl.otf') format('opentype'),*/
+                /*url('/fonts/computer-modern/cmunbl-webfont.woff') format('woff'),*/
+                /*url('/fonts/computer-modern/cmunbl-webfont.ttf') format('truetype'),*/
+                /*url('/fonts/computer-modern/cmunbl-webfont.svg#cmu_serif_extraboldslanted') format('svg');*/
+                /*font-weight: bold;*/
+                /*font-style: italic;*/
+            /*}*/
+
+            app-toolbar {
+                background-color: rgba(0,0,0, .12);
             }
 
-        }
+            .main-header {
+                box-shadow: 0px 5px 6px -3px rgba(0, 0, 0, 0.4);
+            }
 
+            paper-tabs {
+                max-width: 640px;
+                --paper-tabs-selection-bar-color: black;
+            }
+
+            paper-tab {
+                --paper-tab-ink: #aaa;
+                text-transform: uppercase;
+            }
+
+            [hidden] {
+                display: none !important;
+            }
+
+            neon-animated-pages {
+                -webkit-overflow-scrolling: touch;
+            }
         </style>
 
-        <h1>Einar Valur Adalsteinsson</h1>
-        <time>1978-04-11</time>
+        <app-location route="{{route}}"></app-location>
+        <app-route
+            route="{{route}}"
+            pattern="/:page"
+            data="{{routeData}}"
+            tail="{{tail}}">
+        </app-route>
 
-        <div class="category-section">
-            <h2>Nám</h2>
-            <dl>
-                <template is="dom-repeat" items="[[cv.education]]">
-                    <template is="dom-repeat" items="[[item.period]]">
-                        <dt>[[item.from]] - [[item.to]]</dt>
-                    </template>
-                    <dd><strong>[[item.title]]</strong></dd>
-                    <template is="dom-repeat" items="[[item.labels]]">
-                        <dd>[[item]]</dd>
-                    </template>
-                </template>
-            </dl>
-        </div>
+        <app-drawer-layout force-narrow>
+            <app-drawer id="drawer">
+                <app-toolbar></app-toolbar>
+                <iron-selector selected="[[routeData.page]]" attr-for-selected="key">
+                    <a href="/cv" key="cv">CV</a>
+                </iron-selector>
+            </app-drawer>
 
-        <div class="category-section">
-            <h2>Reynsla</h2>
-            <dl>
-                <template is="dom-repeat" items="[[cv.experience]]">
-                    <template is="dom-repeat" items="[[item.period]]">
-                        <dt>[[item.from]] - [[item.to]]</dt>
-                    </template>
-                    <dd><strong>[[item.title]]</strong></dd>
-                    <template is="dom-repeat" items="[[item.labels]]">
-                        <dd>[[item]]</dd>
-                    </template>
-                </template>
-            </dl>
-        </div>
-
-        <div class="category-section">
-            <h2>Kunnátta</h2>
-            <dl>
-                <template is="dom-repeat" items="[[cv.skills]]">
-                    <dt><strong>[[item.title]]</strong></dt>
-                    <template is="dom-repeat" items="[[item.labels]]">
-                        <dd>[[item]]</dd>
-                    </template>
-                </template>
-            </dl>
-        </div>
-
-        <div class="category-section">
-            <h2>Viðurkenningar</h2>
-            <dl>
-                <template is="dom-repeat" items="[[cv.awards]]">
-                    <template is="dom-repeat" items="[[item.period]]">
-                        <dt>[[item.from]] - [[item.to]]</dt>
-                    </template>
-                    <dd><strong>[[item.title]]</strong></dd>
-                    <template is="dom-repeat" items="[[item.labels]]">
-                        <dd>[[item]]</dd>
-                    </template>
-                    <template is="dom-repeat" items="[[item.reference]]">
-                        <dd><a href="[[item]]">[[item]]</a></dd>
-                    </template>
-                </template>
-            </dl>
-        </div>
-
-        <div class="category-section">
-            <h2>Stærri verkefni</h2>
-            <dl>
-                <template is="dom-repeat" items="[[cv.projects]]">
-                    <template is="dom-repeat" items="[[item.period]]">
-                        <dt>[[item.from]] - [[item.to]]</dt>
-                    </template>
-                    <dd><strong>[[item.title]]</strong></dd>
-                    <template is="dom-repeat" items="[[item.labels]]">
-                        <dd>[[item]]</dd>
-                    </template>
-                    <template is="dom-repeat" items="[[item.reference]]">
-                        <dd><a href="[[item]]">[[item]]</a></dd>
-                    </template>
-                </template>
-            </dl>
-        </div>
+            <app-header-layout>
+                <app-header class="main-header">
+                    <app-toolbar>
+                        <paper-icon-button class="menu-button" icon="menu" drawer-toggle hidden$="{{wideLayout}}"></paper-icon-button>
+                    </app-toolbar>
+                </app-header>
+                <div>
+                    <neon-animated-pages selected="[[routeData.page]]" attr-for-selected="key">
+                        <page-cv key=""></page-cv>
+                    </neon-animated-pages>
+                </div>
+            </app-header-layout>
+        </app-drawer-layout>
     </template>
 
     <script>
         Polymer({
             is: 'my-crappy-homepage-app',
+
+            properties: {
+                routeData: {
+                    type: Object,
+                    value: {page: 'cv'}
+                }
+            },
 
             created: function () {
 

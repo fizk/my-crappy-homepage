@@ -35,7 +35,7 @@ gulp.task('vulcanize', ['sass'], function () {
     return gulp.src(['./src/my-crappy-homepage-app/my-crappy-homepage-app.html'])
         .pipe(vulcanize({inlineCss: true, inlineScripts: true})
             .on('error', console.log))
-        .pipe(gulp.dest('./dist/'));
+        .pipe(gulp.dest('./public/dist/'));
 
 });
 
